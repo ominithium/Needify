@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--Looking around I see. -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Needify {%block title%}{%endblock%}</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+       
+      
+        <link rel="shortcut icon" href="/favicon/favicon.ico" type="images/x-icon"> 
+        <link rel="icon" href="/favicon/favicon.ico" type="images/x-icon">
+        
+        
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+          </button>
+          <a class="navbar-brand" href="../../../../"><img src="http://s30.postimg.org/7u32382wx/logo.png" width="150" height="100" class="img-reponsive" style="margin-top:-24px"></a>
+        </div>
+        {%block navbar%}
+        {%if user.is_authenticated%}
+        
+            <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                   <li class="active"><a href="../../../../">Home</a></li>
+                   <li><a href="/add_needed/">Add a Needed!</a></li>
+                   <li><a href="/logout/">Logout</a></li>
+                   <li><a href="#">{{user}} is awesome!</a></li>
+                </ul>
+            </div>
+        {%else%}
+        
+        <div class="navbar-collapse collapse">
+   <ul class="nav navbar-nav">
+        <li class="active"><a href="../../../../">Home</a></li>
+        <li><a href="/register/">Register</a></li>
+        <li><a href="/login/">Login</a></li>
+    </ul>
+</div>
+           
+        {%endif%}
+        {%endblock%}
+      </div>
+    </div>
+
+    
+    <br/><br/><br/>
+        {%block content%}
+        
+        {%endblock%}
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

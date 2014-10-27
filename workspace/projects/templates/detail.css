@@ -1,0 +1,6 @@
+@media (min-width: 879px){
+    .col-md-4{
+        border:3px solid #B5B0B0 !important;
+        background-color: #D3D3D3 !important;
+    }
+}

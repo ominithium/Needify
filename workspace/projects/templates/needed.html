@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{%block navbar%}
+{%if user.is_authenticated%}
+ <div class="navbar-collapse collapse">
+   <ul class="nav navbar-nav">
+       <li><a href="../../../../">Home</a></li>
+       <li><a href="/add_needed/">Add a Needed!</a></li>
+       <li><a href="/logout/">Logout</a></li>
+    </ul>
+</div>
+{%else%}
+<div class="navbar-collapse collapse">
+   <ul class="nav navbar-nav">
+        <li><a href="../../../../">Home</a></li>
+        <li><a href="/register/">Register</a></li>
+        <li><a href="/login/">Login</a></li>
+    </ul>
+</div>
+
+
+{%endif%}
+{%endblock%}
+
+
+{%block content%}
+    <h1>{{needed_name}}</h1>
+    {%if needed%}
+        <p>Likes: {{needed.likes}}
+        
+            <a href='/needed/{{needed_title_url}}/votes/'/>
+                <span class="label label-primary">Like</span>
+            </a>
+        </p>
+        <p>{{needed.body}}</p>
+        <p>Posted on: {{needed.posted}}</p>
+        
+        <hr/>
+        
+    {%else%}
+        <p>The specified needed {{needed_name}} does not exist! Why not make it? <br/>
+            <h2><a href="../../../../../">Here</a></h2>
+        </p>
+    {%endif%}
+        
+{%endblock%}

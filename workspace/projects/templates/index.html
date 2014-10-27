@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block content%}
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>What is <span style="color: rgb(92, 158, 33); ">Needify</span>?</h1>
+        <p>Needify is volunteering for the twenty-first century. It's a platform used by non-profits to find volunteers all around the world. The work is not limited to physical work but also web development, app development, system administration, etc. <br/>
+            
+            Caught your interest? <button class="btn btn-success">Learn more &#10157;</button>
+        </p>
+       
+      </div>
+    </div>
+
+
+{%if items%}
+
+<div class="container">
+            <div class="row">
+    {%for p in items%}
+        
+        
+        
+                <div class="col-md-6">
+                    <p><h1><a href="/needed/{{p.url}}">{{p}}</a></h1>Likes: {{p.likes}}
+                        <a href="/needed/{{p.url}}/votes">
+                            <span class="label label-primary">Like</span>
+                            
+                        </a>
+                    </p>
+                    <p>{{p.body|slice:":150"}}</p> 
+                
+                </div>
+
+      
+    {%endfor%}
+    <hr/>
+ </div>
+</div>
+
+{%else%}
+
+Nobody needs anyone to do anything.
+
+{%endif%}
+{%endblock%}

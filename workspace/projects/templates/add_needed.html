@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block navbar%}
+
+<div class="navbar-collapse collapse">
+   <ul class="nav navbar-nav">
+       <li><a href="../../../../">Home</a></li>
+       <li class="active"><a href="/add_needed/">Add a Needed!</a></li>
+       <li><a href="/logout/">Logout</a></li>
+    </ul>
+</div>
+
+{%endblock%}
+{%block content%}
+
+
+<form id="NeededForm", method="post" action="projects/add_needed/">
+    {%csrf_token%}
+    {%for hidden in form.hidden_fields%}
+        {{hidden}}
+    {%endfor%}
+    <div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+            <p>        
+                {{form.as_p}} 
+            </p>
+        <button type="submit" class="btn btn-success">Submit!</button>
+    </div></div></div></div>
+   
+</form>
+{%endblock%}
