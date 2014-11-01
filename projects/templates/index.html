@@ -1,12 +1,17 @@
 {%extends 'base.html'%}
 {%block content%}
+ <style>
+  #aboutus{
+   display:inline;
+  }
+ </style>
  <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1>What is <span style="color: rgb(92, 158, 33); ">Needify</span>?</h1>
         <p>Needify is volunteering for the twenty-first century. It's a platform used by non-profits to find volunteers all around the world. The work is not limited to physical work but also web development, app development, system administration, etc. <br/>
             
-            Caught your interest? <button class="btn btn-success">Learn more &#10157;</button>
+            Caught your interest? <form action="/about/" id="aboutus"><button class="btn btn-success">Learn more &#10157;</button></form>
         </p>
        
       </div>
